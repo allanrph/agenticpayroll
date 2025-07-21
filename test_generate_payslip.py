@@ -1,6 +1,5 @@
-import uuid
-from app.services.payslip import generate_payslip
-from app.models.employee import Employee, CompanyMetadata
+from app.use_cases.services.payslip import generate_payslip
+from app.domains.employee import Employee, CompanyMetadata
 
 # Dummy data setup
 employee = Employee(

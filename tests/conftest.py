@@ -1,7 +1,6 @@
 import pytest
-from app.main import app
-from app.database.connection import AsyncSessionLocal
-from fastapi.testclient import TestClient
+from app.adapters.outgoing.database import AsyncSessionLocal
+
 
 @pytest.fixture
 async def async_db_session():

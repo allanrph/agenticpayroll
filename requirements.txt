@@ -13,7 +13,8 @@ httpx
 pytest-asyncio
 pytest-mock
 pytest-httpx
-pytest-asyncmock
+asyncmock
 greenlet
-sqlalchemy-asyncpg
+asyncpg
 pydantic-settings
+aiosqlite
