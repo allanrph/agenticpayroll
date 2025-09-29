@@ -1,5 +1,4 @@
 payslips
-**/__pycache__/**
+**/__pycache__/
 agent
 .idea
-__pycache__/
