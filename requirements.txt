@@ -18,3 +18,5 @@ greenlet
 asyncpg
 pydantic-settings
 aiosqlite
+openai
+google-genai

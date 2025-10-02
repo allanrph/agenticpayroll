@@ -57,7 +57,9 @@ class CalculatePayrollUseCase:
             )
 
             # Calculate taxes
-            taxes = self._calculate_taxes(employee, gross_pay, country_profile)
+            taxes = self.payroll_crew_orchestrator.run_payroll(
+                employee, country_profile, employee_transactions
+            )
 
             # Get currency from first transaction
             currency = (

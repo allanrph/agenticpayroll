@@ -9,9 +9,33 @@ from app.domains.country_profile import (
     BillingClassification,
     Solution,
     PayrollClassification,
+    TaxBracket,
 )
 from app.infrastructure.HttpClientBase import HttpClientBase
 from app.use_cases.clients.country_profile_client import ICountryProfileClient
+
+ECUADOR_DETAILED_TAX_BRACKETS = [
+    # Exempt income
+    TaxBracket(from_amount=0.0, up_to=11200.0, rate=0.0, fixed=0.0),
+    # 5% bracket
+    TaxBracket(from_amount=11200.01, up_to=14400.0, rate=0.05, fixed=0.0),
+    # 10% bracket
+    TaxBracket(from_amount=14400.01, up_to=18000.0, rate=0.10, fixed=160.0),
+    # 12% bracket
+    TaxBracket(from_amount=18000.01, up_to=21600.0, rate=0.12, fixed=520.0),
+    # 15% bracket
+    TaxBracket(from_amount=21600.01, up_to=24000.0, rate=0.15, fixed=952.0),
+    # 20% bracket
+    TaxBracket(from_amount=24000.01, up_to=27600.0, rate=0.20, fixed=1312.0),
+    # 25% bracket
+    TaxBracket(from_amount=27600.01, up_to=36000.0, rate=0.25, fixed=2024.0),
+    # 30% bracket
+    TaxBracket(from_amount=36000.01, up_to=48000.0, rate=0.30, fixed=3134.0),
+    # 35% bracket
+    TaxBracket(from_amount=48000.01, up_to=60000.0, rate=0.35, fixed=6734.0),
+    # 37% bracket (highest)
+    TaxBracket(from_amount=60000.01, up_to=None, rate=0.37, fixed=10934.0),
+]
 
 
 class CountryProfileClient(HttpClientBase, ICountryProfileClient):
@@ -138,5 +162,5 @@ class CountryProfileClient(HttpClientBase, ICountryProfileClient):
         # Add paycodes from separate JSON file
         country_profile = CountryProfile()
         country_profile.paycodes = self._get_paycodes_for_country(country_code)
-
+        country_profile.tax_table = ECUADOR_DETAILED_TAX_BRACKETS
         return country_profile

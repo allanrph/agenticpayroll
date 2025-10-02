@@ -4,8 +4,10 @@ from typing import List, Dict, Optional, Any
 
 @dataclass
 class TaxBracket:
+    from_amount: Optional[float] = None
     up_to: Optional[float]
     rate: float
+    fixed: Optional[float] = None
 
 
 @dataclass
@@ -106,3 +108,4 @@ class CountryPayCode:
 class CountryProfile:
     # Paycodes
     paycodes: Optional[List[CountryPayCode]] = None
+    tax_table: Optional[List[TaxBracket]] = None

@@ -2,3 +2,4 @@ payslips
 **/__pycache__/
 agent
 .idea
+**/.env
