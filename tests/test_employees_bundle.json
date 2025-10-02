@@ -14,7 +14,10 @@
         "remote_work_allowance": 100,
         "meal_allowance": 250
       },
-      "tax_exempt_allowances": ["internet_reimbursement", "remote_work_allowance"],
+      "tax_exempt_allowances": [
+        "internet_reimbursement",
+        "remote_work_allowance"
+      ],
       "benefits_opt_in": {
         "private_pension": true,
         "health_insurance_top_up": true
@@ -47,7 +50,10 @@
         "internet_reimbursement": 100,
         "professional_development_allowance": 300
       },
-      "tax_exempt_allowances": ["internet_reimbursement", "professional_development_allowance"],
+      "tax_exempt_allowances": [
+        "internet_reimbursement",
+        "professional_development_allowance"
+      ],
       "benefits_opt_in": {
         "private_pension": true,
         "RRSP": true,
@@ -81,7 +87,9 @@
         "transport": 1000,
         "meal_allowance": 500
       },
-      "tax_exempt_allowances": ["transport"],
+      "tax_exempt_allowances": [
+        "transport"
+      ],
       "benefits_opt_in": {
         "health_insurance_top_up": true
       },
@@ -111,7 +119,9 @@
       "allowances": {
         "transport": 140000
       },
-      "tax_exempt_allowances": ["transport"],
+      "tax_exempt_allowances": [
+        "transport"
+      ],
       "benefits_opt_in": {},
       "metadata": {
         "full_name": "Daniela Gomez",
@@ -142,7 +152,10 @@
         "meal_allowance": 1500,
         "internet_reimbursement": 800
       },
-      "tax_exempt_allowances": ["housing", "transport"],
+      "tax_exempt_allowances": [
+        "housing",
+        "transport"
+      ],
       "benefits_opt_in": {
         "private_pension": true,
         "health_insurance_top_up": true,
@@ -175,7 +188,9 @@
         "transport": 150,
         "meal_allowance": 300
       },
-      "tax_exempt_allowances": ["meal_allowance"],
+      "tax_exempt_allowances": [
+        "meal_allowance"
+      ],
       "benefits_opt_in": {
         "private_pension": true
       },
@@ -206,7 +221,9 @@
         "meal_allowance": 250,
         "internet_reimbursement": 90
       },
-      "tax_exempt_allowances": ["internet_reimbursement"],
+      "tax_exempt_allowances": [
+        "internet_reimbursement"
+      ],
       "benefits_opt_in": {
         "private_pension": true,
         "health_insurance_top_up": true
@@ -238,7 +255,9 @@
         "transport_allowance": 100,
         "internet_reimbursement": 50
       },
-      "tax_exempt_allowances": ["transport_allowance"],
+      "tax_exempt_allowances": [
+        "transport_allowance"
+      ],
       "benefits_opt_in": {
         "transport_allowance": true
       },
@@ -268,7 +287,9 @@
       "allowances": {
         "meal_allowance": 150
       },
-      "tax_exempt_allowances": ["meal_allowance"],
+      "tax_exempt_allowances": [
+        "meal_allowance"
+      ],
       "benefits_opt_in": {
         "meal_allowance": true
       },
@@ -286,3 +307,35 @@
     }
   }
 ]
+
+
+
+[
+  {
+    "ruleName": "EISS Employee",
+    "formulae": "1. multiply x by y",
+    "codeBlock": "//code"
+  }
+]
+
+
+[
+  {
+    "tableName": "Federal",
+    "brackets": [
+      {
+        "applicability": "income between 0 and 10000",
+        "calculation": "0",
+      },
+      {
+        "applicability": "income between 10000 and 20000",
+        "calculation": "income * 0.2 + (to - income) * 0.3" // This is rate on income 20% plus 30% on the income above the upper limit
+      }
+    ]
+  }
+]
+
+{
+  "minimumWage": 10000,
+  "anotherCustomVariable": 10000
+}

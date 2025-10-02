@@ -1,0 +1,104 @@
+[
+    {
+        "countryIso2": "EC",
+        "name": "ER-IESS",
+        "description": "Employer-EISS",
+        "type": "TAXES",
+        "parentPayCodeId": "28f9a0b1-c2d3-4fc6-dabc-01234567890a",
+        "parentPayCode": {
+            "id": "28f9a0b1-c2d3-4fc6-dabc-01234567890a",
+            "value": "parent-paycode-social-security-national-insurance",
+            "payCodeType": "TAXES"
+        },
+        "frequency": "RECURRING",
+        "assignToSolution": true,
+        "billingClassificationId": null,
+        "payrollClassificationId": "d2095668-1372-49e7-a343-2014e7067f13",
+        "applicableRegion": "COUNTRY_WIDE",
+        "locations": [],
+        "solutions": [
+            {
+                "id": "38010c5a-2c58-4eed-b708-f48313d5b6cb",
+                "solutionId": "EOR",
+                "paymentBy": "HELIOS",
+                "billingClassification": {
+                    "billingClassificationCode": "",
+                    "billingClassificationName": "",
+                    "billingClassificationAccountName": "",
+                    "billingClassificationAccountNumber": ""
+                },
+                "glCodeId": "-"
+            }
+        ],
+        "taxPayer": "EMPLOYER",
+        "taxType": null,
+        "isPremiumPay": null,
+        "isTaxable": null,
+        "payrollClassification": {
+            "id": "d2095668-1372-49e7-a343-2014e7067f13",
+            "value": "paycode-payroll-classification-employer-tax-contributions",
+            "payCodeType": "TAXES"
+        },
+        "billingClassification": {
+            "billingClassificationCode": "global_payroll_employer_liability",
+            "billingClassificationName": "Global Payroll revenue:Global Payroll - Employer Tax Liability",
+            "billingClassificationAccountName": "Global Payroll ER/EE Payroll Taxes Payable",
+            "billingClassificationAccountNumber": "220402"
+        },
+        "id": "5a3483df-3bf3-4f78-9a26-56e5ae68cd16",
+        "glCodeId": "",
+        "calculationFormula": "1. Receive the employee's salary as input.\n2. Multiply the salary by 9.45% (0.0945) to determine the employee's IESS contribution.\n3. Return the calculated contribution amount.",
+        "calculationCodeBlock": "function execute(salary) {\n  if (typeof salary !== 'number' || isNaN(salary) || salary < 0) {\n    throw new Error('Invalid salary input');\n  }\n  const contributionRate = 0.0945;\n  return salary * contributionRate;\n}"
+    },
+    {
+        "countryIso2": "EC",
+        "name": "EE-IESS",
+        "description": "Employee Contribution for IESS",
+        "type": "TAXES",
+        "parentPayCodeId": "28f9a0b1-c2d3-4fc6-dabc-01234567890a",
+        "parentPayCode": {
+            "id": "28f9a0b1-c2d3-4fc6-dabc-01234567890a",
+            "value": "parent-paycode-social-security-national-insurance",
+            "payCodeType": "TAXES"
+        },
+        "frequency": "RECURRING",
+        "assignToSolution": true,
+        "billingClassificationId": null,
+        "payrollClassificationId": "59ceacb2-4331-4e38-b474-e9ee82b8a660",
+        "applicableRegion": "COUNTRY_WIDE",
+        "locations": [],
+        "solutions": [
+            {
+                "id": "b2fe8d73-cb39-4d84-8e8d-8ab2a48bb79f",
+                "solutionId": "EOR",
+                "paymentBy": "HELIOS",
+                "billingClassification": {
+                    "billingClassificationCode": "",
+                    "billingClassificationName": "",
+                    "billingClassificationAccountName": "",
+                    "billingClassificationAccountNumber": ""
+                },
+                "glCodeId": "-"
+            }
+        ],
+        "taxPayer": "EMPLOYEE",
+        "taxType": null,
+        "isPremiumPay": null,
+        "isTaxable": null,
+        "payrollClassification": {
+            "id": "59ceacb2-4331-4e38-b474-e9ee82b8a660",
+            "value": "paycode-payroll-classification-employee-tax-contributions",
+            "payCodeType": "TAXES"
+        },
+        "billingClassification": {
+            "billingClassificationCode": "global_payroll_employee_tax_liability",
+            "billingClassificationName": "Global Payroll revenue:Global Payroll - Employee Tax Liability",
+            "billingClassificationAccountName": "Global Payroll ER/EE Payroll Taxes Payable",
+            "billingClassificationAccountNumber": "220402"
+        },
+        "id": "4f6614b8-9223-4e10-b820-ebdbd85086cb",
+        "glCodeId": "",
+        "calculationFormula": "1. Receive the worker's monthly salary as input.\n2. Multiply the salary by 11.15% (0.1115), which is the employer's IESS contribution rate.\n3. Return the calculated contribution amount.",
+        "calculationCodeBlock": "function execute(salary) {\n  if (typeof salary !== 'number' || isNaN(salary) || salary < 0) {\n    throw new Error('Invalid salary input');\n  }\n  const contributionRate = 0.1115;\n  return salary * contributionRate;\n}"
+    }
+]

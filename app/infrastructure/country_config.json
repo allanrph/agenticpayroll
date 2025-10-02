@@ -550,53 +550,98 @@
     }
   },
   "Ecuador": {
-  "currency": "USD",
-  "timezone": "America/Guayaquil",
-  "pay_frequency": "Monthly",
-  "income_tax_brackets": [
-    { "up_to": 11722, "rate": 0.0 },
-    { "up_to": 14935, "rate": 0.05 },
-    { "up_to": 18657, "rate": 0.10 },
-    { "up_to": 22481, "rate": 0.12 },
-    { "up_to": 44742, "rate": 0.15 },
-    { "up_to": 67157, "rate": 0.20 },
-    { "up_to": 89471, "rate": 0.25 },
-    { "up_to": 113186, "rate": 0.30 },
-    { "up_to": null, "rate": 0.35 }
-  ],
-  "social_security": {
-    "employee_rate": 0.0945,
-    "employer_rate": 0.1125
-  },
-  "health_insurance": {
-    "employee_rate": 0.0,
-    "employer_rate": 0.0
-  },
-  "solidarity_fund_rate": 0.0,
-  "country_specific_benefits": [
-    {
-      "name": "IESS Pension",
+    "currency": "USD",
+    "currency_symbol": "$",
+    "timezone": "America/Guayaquil",
+    "date_format": "DD/MM/YYYY",
+    "pay_frequency": "Monthly",
+    "payroll_cutoff_day": 25,
+    "public_holidays": "API_INTEGRATED",
+    "income_tax_brackets": [
+      {
+        "up_to": 11722,
+        "rate": 0.0
+      },
+      {
+        "up_to": 14935,
+        "rate": 0.05
+      },
+      {
+        "up_to": 18657,
+        "rate": 0.10
+      },
+      {
+        "up_to": 22481,
+        "rate": 0.12
+      },
+      {
+        "up_to": 44742,
+        "rate": 0.15
+      },
+      {
+        "up_to": 67157,
+        "rate": 0.20
+      },
+      {
+        "up_to": 89471,
+        "rate": 0.25
+      },
+      {
+        "up_to": 113186,
+        "rate": 0.30
+      },
+      {
+        "up_to": null,
+        "rate": 0.35
+      }
+    ],
+    "social_security": {
       "employee_rate": 0.0945,
       "employer_rate": 0.1125
-    }
-  ],
-  "benefits_opt_in_options": {
-    "transport_allowance": {
-      "employee_fixed": 100,
-      "pre_tax": true
-    }
-  },
-  "tax_exempt_allowances": ["transport_allowance"]
+    },
+    "health_insurance": {
+      "employee_rate": 0.0,
+      "employer_rate": 0.0
+    },
+    "solidarity_fund_rate": 0.0,
+    "country_specific_benefits": [
+      {
+        "name": "IESS Pension",
+        "employee_rate": 0.0945,
+        "employer_rate": 0.1125
+      }
+    ],
+    "benefits_opt_in_options": {
+      "transport_allowance": {
+        "employee_fixed": 100,
+        "pre_tax": true
+      }
+    },
+    "tax_exempt_allowances": [
+      "transport_allowance"
+    ]
   },
   "Bolivia": {
     "currency": "BOB",
     "timezone": "America/La_Paz",
     "pay_frequency": "Monthly",
     "income_tax_brackets": [
-      { "up_to": 13200, "rate": 0.0 },
-      { "up_to": 25000, "rate": 0.13 },
-      { "up_to": 100000, "rate": 0.20 },
-      { "up_to": null, "rate": 0.25 }
+      {
+        "up_to": 13200,
+        "rate": 0.0
+      },
+      {
+        "up_to": 25000,
+        "rate": 0.13
+      },
+      {
+        "up_to": 100000,
+        "rate": 0.20
+      },
+      {
+        "up_to": null,
+        "rate": 0.25
+      }
     ],
     "social_security": {
       "employee_rate": 0.1271,
@@ -621,6 +666,8 @@
         "pre_tax": true
       }
     },
-    "tax_exempt_allowances": ["meal_allowance"]
+    "tax_exempt_allowances": [
+      "meal_allowance"
+    ]
   }
 }

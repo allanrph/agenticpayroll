@@ -1,0 +1,37 @@
+Categories of country information:
+
+1. Pay Codes formulae:
+This is the formulae for the pay codes. It should be stored inside the paycode.
+[
+  {
+    "ruleName": "EISS Employee",
+    "formulae": "1. multiply x by y",
+    "codeBlock": "//code"
+  }
+]
+
+2. Income Tax Brackets:
+This is the brackets for the income tax. It should be stored inside employeer liability.
+[
+  {
+    "tableName": "Federal",
+    "brackets": [
+      {
+        "applicability": "income between 0 and 10000",
+        "calculation": "0",
+      },
+      {
+        "applicability": "income between 10000 and 20000",
+        "calculation": "income * 0.2 + (to - income) * 0.3" // This is rate on income 20% plus 30% on the income above the upper limit
+      }
+    ]
+  }
+]
+
+
+3. Custom Variables:
+This is the custom variables for the country. It should be stored inside employeer liability.
+{
+  "minimumWage": 10000,
+  "anotherCustomVariable": 10000
+}
